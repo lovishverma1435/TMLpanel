@@ -1,7 +1,6 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Sidebar from './components/common/Header'
 import Header from './components/common/Header'
 import { IconCategoryFilled } from '@tabler/icons-react'
 import { useState } from 'react'
@@ -22,10 +21,10 @@ function App() {
       <div className="flex">
         <BrowserRouter>
           <Header value={Adminpanel} />
-          <div className="flex flex-col w-full">
-            <div onClick={() => setAdminpanel(!Adminpanel)} className="flex ml-5  cursor-pointer gap-3 ">
+          <div className="flex flex-col w-full ">
+            <div onClick={() => setAdminpanel(!Adminpanel)} className="flex pl-5 cursor-pointer gap-4 py-3 shadow-[0_4px_6px_rgba(0,0,0,0.2)]">
               <IconCategoryFilled stroke={2} />
-              <h1>Admin Panel</h1>
+              <h1 className='text-base font-semibold font-Inter'>Admin Dashboard</h1>
             </div>
             <div className="flex justify-center items-center mx-10 flex-col">
               <Routes>

@@ -26,7 +26,6 @@ const Header = ({value}) => {
                     <p className={`${value ? " opacity-0 w-0":" w-full opacity-100"} transition-all duration-200 text-white font-bold text-[19.2px] overflow-hidden  h-[29px]`}>Admin Panel</p>
                 </div>
                 <div className="flex flex-col gap-7 pt-4">
-
                 <Link to={"/"} className="cursor-pointer  ">
                     <div className="flex items-center  pr-[30px] pl-5 gap-2">
                         <FontAwesomeIcon icon={faTachometerAlt} size="xl" />
@@ -45,7 +44,7 @@ const Header = ({value}) => {
                     <HandelClick click={click} />
                 </Link>
                 <div onClick={() => ishandlechange()} className=" cursor-pointer flex flex-col ">
-                    <div className="flex justify-between pr-[10px] pl-5">
+                    <div className="flex justify-between pr-[10px] pl-5 ">
                         <span className='flex gap-3 items-center'>
 
                             <IconSwitchHorizontal className='w-7 h-7' />
@@ -60,7 +59,7 @@ const Header = ({value}) => {
                 <Link to={"/withdrawal/withdrawhistory"} className=" flex cursor-pointer">
                     <div className="flex items-center  pr-[30px] pl-5 gap-2">
                         <IconBookDownload className='w-7 h-7' />
-                        <p  className={` ${value ? "hidden opacity-0":"block opacity-100"}  text-lg transition-all duration-200 h-[28px] overflow-hidden`}>Widral history</p>
+                        <p  className={` ${value ? "hidden opacity-0":"block opacity-100"}  text-lg transition-all duration-200 h-[28px] overflow-hidden`}>Withdraw History</p>
                     </div>
                 </Link>
                 <div className="flex cursor-pointer ">
