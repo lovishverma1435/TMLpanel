@@ -1,6 +1,5 @@
-// src/components/UserList.jsx
 import { useEffect, useState } from "react";
-import api from "../api";
+import { fetchUsers } from "../api";
 
 function UserList() {
   const [users, setUsers] = useState([]);
@@ -8,27 +7,25 @@ function UserList() {
   const [err, setErr] = useState(null);
 
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchUsersFunc = async () => {
       setLoading(true);
       setErr(null);
       try {
-        // According to your Postman test, POST with empty body works
-        const res = await api.post("/admin/users", {}); 
-        // Example response structure you shared:
-        // { success: true, message: "...", users: [...], count: 52 }
-        if (res.data?.success) {
-          setUsers(res.data.users || []);
+        const data = await fetchUsers({});
+        console.log(data);
+        if (data?.success) {
+          setUsers(data.users || []);
         } else {
-          setErr(res.data?.message || "Failed to fetch users");
+          setErr(data?.message || "Failed to fetch users");
         }
       } catch (error) {
-        setErr(error.response?.data?.message || error.message);
+        setErr(error.message || error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchUsers();
+    fetchUsersFunc();
   }, []);
 
   if (loading) return <p>Loading users...</p>;

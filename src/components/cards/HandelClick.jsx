@@ -32,17 +32,17 @@ export const IsHandelClick = ({ Isclick }) => {
     ${Isclick ? "max-h-72 opacity-100 py-3" : "max-h-0 opacity-0 py-0"}`}
       >
         <div className="flex flex-col gap-4">
-          <Link className="flex items-center justify-center gap-2" to={"/transection/deposittransection"}>
+          <Link className="flex items-center justify-center gap-2" to={"/Transaction/depositTransaction"}>
             <span><IconDeviceMobileUp className='w-6 h-6' /></span>
-            <p> Deposit Transection</p>
+            <p> Deposit Transaction</p>
           </Link>
-          <Link className="flex items-center justify-center gap-2" to={"/transection/margintransection"}>
+          <Link className="flex items-center justify-center gap-2" to={"/Transaction/marginTransaction"}>
             <span><IconSwitchHorizontal className='w-6 h-6' /></span>
-            <p>Margin Transection</p>
+            <p>Margin Transaction</p>
           </Link>
-          <Link className="flex items-center justify-center gap-2" to={"/transection/payouttransection"}>
+          <Link className="flex items-center justify-center gap-2" to={"/Transaction/payoutTransaction"}>
             <span><IconFileDollar className='w-6 h-6'/></span>
-            <p>Payout Transection</p>
+            <p>Payout Transaction</p>
           </Link>
         </div>
       </div>
