@@ -17,7 +17,7 @@ export default function AppLayout() {
           <IconCategoryFilled stroke={2} />
           <h1 className="text-base font-semibold font-Inter">Admin Dashboard</h1>
         </div>
-        <div className="flex justify-center items-center mx-10 flex-col">
+        <div className="flex justify-center items-center  flex-col">
           <Outlet />
         </div>
       </div>

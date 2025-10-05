@@ -17,14 +17,15 @@ export const HandelClick = ({ click, value }) => {
             <span>
               <IconScale className="w-6 h-6" />
             </span>
-            User Balance</Link>
+            <p  className={`${value ? "hidden opacity-0" : "block opacity-100"}`}>User Balance</p>
+            </Link>
         </div>
       </div>
 
     </>
   )
 }
-export const IsHandelClick = ({ Isclick }) => {
+export const IsHandelClick = ({ Isclick,value }) => {
   return (
     <>
       <div
@@ -34,15 +35,15 @@ export const IsHandelClick = ({ Isclick }) => {
         <div className="flex flex-col gap-4">
           <Link className="flex items-center justify-center gap-2" to={"/Transaction/depositTransaction"}>
             <span><IconDeviceMobileUp className='w-6 h-6' /></span>
-            <p> Deposit Transaction</p>
+            <p  className={`${value ? "hidden opacity-0" : "block opacity-100"}`}> Deposit Transaction</p>
           </Link>
           <Link className="flex items-center justify-center gap-2" to={"/Transaction/marginTransaction"}>
             <span><IconSwitchHorizontal className='w-6 h-6' /></span>
-            <p>Margin Transaction</p>
+            <p  className={`${value ? "hidden opacity-0" : "block opacity-100"}`}>Margin Transaction</p>
           </Link>
           <Link className="flex items-center justify-center gap-2" to={"/Transaction/payoutTransaction"}>
             <span><IconFileDollar className='w-6 h-6'/></span>
-            <p>Payout Transaction</p>
+            <p  className={`${value ? "hidden opacity-0" : "block opacity-100"}`}>Payout Transaction</p>
           </Link>
         </div>
       </div>

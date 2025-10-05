@@ -46,3 +46,9 @@ export async function fetchUsers(params) {
 
   return data;
 }
+
+export async function fetchUsersbalance(params) {
+  const { data } = await api.post("/admin/user_balances", params);
+
+  return data;
+}

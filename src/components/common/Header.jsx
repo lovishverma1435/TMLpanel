@@ -41,7 +41,7 @@ const Header = ({value}) => {
                         </span>
                         <IconChevronDown className={`${click ? "rotate-180" : " rotate-0"} transition-all duration-200 `} />
                     </div>
-                    <HandelClick click={click} />
+                    <HandelClick click={click} value={value} />
                 </Link>
                 <div onClick={() => ishandlechange()} className=" cursor-pointer flex flex-col ">
                     <div className="flex justify-between pr-[10px] pl-5 ">
@@ -53,7 +53,7 @@ const Header = ({value}) => {
                         <IconChevronDown className={`${isclick ? "rotate-180" : " rotate-0"} transition-all duration-200 `} />
 
                     </div>
-                    <IsHandelClick Isclick={isclick} />
+                    <IsHandelClick Isclick={isclick} value={value} />
 
                 </div>
                 <Link to={"/withdrawal/withdrawhistory"} className=" flex cursor-pointer">

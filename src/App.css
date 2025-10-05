@@ -1,6 +1,18 @@
 @import "tailwindcss";
 
-@theme {
-    --font-poppins:"poppins",sans-serif;
-    --font-Inter:"Inter", sans-serif;
+@layer base {
+  :root {
+    --font-poppins: "Poppins", sans-serif;
+    --font-inter: "Inter", sans-serif;
+  }
+}
+
+.container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
 }
