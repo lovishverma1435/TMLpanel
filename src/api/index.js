@@ -41,6 +41,12 @@ export function logout() {
   // return api.post("/admin/logout").finally(() => tokenStore.clear());
 }
 
+
+export async function fetchDashboard(params) {
+  const { data } = await api.post("admin/dashboard", params);
+  
+  return data;
+}
 export async function fetchUsers(params) {
   const { data } = await api.post("/admin/users", params);
 
@@ -52,3 +58,30 @@ export async function fetchUsersbalance(params) {
 
   return data;
 }
+
+export async function fetchDepositTrans(params) {
+  const { data } = await api.post("/admin/deposit_transactions", params);
+
+  return data;
+}
+
+export async function fetchMarginTransactions(params) {
+  const { data } = await api.post("/admin/margin_transactions", params);
+
+  return data;
+}
+
+export async function fetchPayoutTransactions(params) {
+  const { data } = await api.post("/admin/payout_transactions", params);
+
+  return data;
+}
+
+export async function fetchPendingWithdraws(params) {
+  const { data } = await api.post("/admin/pending_withdraws", params);
+
+  return data;
+}
+
+
+
