@@ -1,7 +1,6 @@
 import { faL, faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconBookDownload, IconChevronDown, IconLogout, IconSwitchHorizontal, IconUserFilled } from '@tabler/icons-react';
-import { Gauge } from 'lucide-react';
 import { useState } from 'react';
 import { FaUsers } from "react-icons/fa6";
 import { HandelClick, IsHandelClick } from '../cards/HandelClick';

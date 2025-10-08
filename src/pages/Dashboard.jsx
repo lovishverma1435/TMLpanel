@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { fetchDashboard } from "../api";
-import Dashboardjson from "../json/Dashboard.json"
 function Dashboard() {
   const [IsDashboard, SetIsDashboard] = useState({});
   const [loading, setLoading] = useState(true);
