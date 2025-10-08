@@ -83,5 +83,11 @@ export async function fetchPendingWithdraws(params) {
   return data;
 }
 
+export async function fetchUserDetails(params) {
+  const { data } = await api.post("/admin/userDetails", params);
+
+  return data;
+}
+
 
 

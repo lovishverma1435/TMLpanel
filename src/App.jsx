@@ -12,6 +12,7 @@ import Login from './Login';
 import { ProtectedRoute } from './pages/Guards';
 import AppLayout from './pages/AppLayout';
 import AuthLayout from './pages/AuthLayout';
+import UserDetail from './pages/UserDetail';
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/Transaction/marginTransaction" element={<ProtectedRoute><MarginTransaction /></ProtectedRoute>} />
           <Route path="/Transaction/payoutTransaction" element={<ProtectedRoute><PayoutTransaction /></ProtectedRoute>} />
           <Route path="/withdrawal/withdrawhistory" element={<ProtectedRoute><WithdrawalHistory /></ProtectedRoute>} />
+          <Route path="/user/userdetail/:id" element={<ProtectedRoute><UserDetail /></ProtectedRoute>} />
         </Route>
       </Routes>
     </BrowserRouter>

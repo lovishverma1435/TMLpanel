@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchUsers } from "../api";
 import { Check, X } from "lucide-react";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+import { Link } from "react-router-dom";
 
 function UserList() {
   const [users, setUsers] = useState([]);
@@ -45,6 +46,19 @@ function UserList() {
 
   console.log(651651, users)
 
+  const data = [
+    { value: "S No" },
+    { value: "Name" },
+    { value: "UserId" },
+    { value: "Email" },
+    { value: "Phone Number" },
+    { value: "TransferAble" },
+    { value: "Verified" },
+    { value: "Blocked" },
+    { value: "Date" },
+    { value: "view" }
+  ]
+
   return (
     <>
       <div className=" container mx-auto max-w-[1320px] py-6 px-4 sm:px-6 lg:px-8 ">
@@ -63,16 +77,11 @@ function UserList() {
           <table className="min-w-full bg-white border border-gray-200">
             <thead className="bg-[#212529] text-center text-sm font-semibold text-white text-nowrap">
               <tr>
-                <th className="px-6 py-3 ">S No</th>
-                <th className="px-6 py-3 ">Name</th>
-                <th className="px-6 py-3 ">UserId</th>
-                <th className="px-6 py-3 ">Email</th>
-                <th className="px-6 py-3 ">Phone Number</th>
-                <th className="px-6 py-3 ">TransferAble</th>
-                <th className="px-6 py-3 ">Verified</th>
-                <th className="px-6 py-3 ">Blocked</th>
-                <th className="px-6 py-3 ">Date</th>
-                <th className="px-6 py-3 ">view</th>
+                {
+                  data.map((item, i) => (
+                    <th key={item + i} className="px-6 py-2 ">{item.value}</th>
+                  ))
+                }
               </tr>
             </thead>
             <tbody>
@@ -101,8 +110,16 @@ function UserList() {
                     ) : (<X className="text-red-500" />)}
                     </div>
                   </td>
-                  <td className="px-6 py-4  border border-gray-300">{new Date(user.createdAt).toLocaleString('en-GB', { timeZone: 'Asia/Kolkata', hour12: false })}</td>
-                  <td className="px-6 py-4  border border-gray-300"> <a href="#">{user._id}</a></td> 
+                  <td className="px-6 py-2  border border-gray-300">{new Date(user.createdAt).toLocaleString('en-GB', { timeZone: 'Asia/Kolkata', hour12: false })}</td>
+                  <td className="px-6 py-2 border border-gray-300 ">
+                    <div className="flex items-center justify-center ">
+                      <Link to={`/user/userdetail/${user._id}`}>
+                        <button className="bg-purple-600 py-[5px] px-3.5 rounded text-white font-normal cursor-pointer">
+                          View
+                        </button>
+                      </Link>
+                    </div>
+                  </td>
                 </tr>
               ))}
             </tbody>

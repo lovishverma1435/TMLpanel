@@ -43,8 +43,25 @@ function UserList() {
   if (loading) return <p className="text-green-400 font-semibold text-2xl text-center mt-10">Loading transactions...</p>;
   if (err) return <p className="text-red-600 font-semibold text-2xl text-center mt-10">Error: {err}</p>;
 
+   const data = [
+    { value: "S No" },
+    { value: "Name" },
+    { value: "UserId" },
+    { value: "adminHash" },
+    { value: "Amount" },
+    { value: "apiKey" },
+    { value: "debitHash" },
+    { value: "From" },
+    { value: "To" },
+    { value: "Deposit Status" },
+    { value: "Debit Status" },
+    { value: "Token Name" },
+    { value: "Transaction Hash" },
+    { value: "Date" },
+  ]
+
   return (
-    <div className="container mx-auto max-w-[1320px] py-6 px-4 sm:px-6 lg:px-8">
+    <div className="container  py-6 px-4 sm:px-6 lg:px-8">
       {/* Header */}
       <div className="bg-purple-600 text-white text-center py-4  mb-6">
         <h1 className="text-2xl md:text-4xl  font-bold">Deposit Transaction</h1>
@@ -60,20 +77,11 @@ function UserList() {
         <table className="min-w-full bg-white border border-gray-200">
           <thead className="bg-[#212529] text-sm font-semibold text-white text-center text-nowrap">
             <tr>
-              <th className="px-6 py-3 ">S No</th>
-              <th className="px-6 py-3 ">UserId</th>
-              <th className="px-6 py-3 ">Name</th>
-              <th className="px-6 py-3 ">adminHash</th>
-              <th className="px-6 py-3 ">Amount</th>
-              <th className="px-6 py-3 ">apiKey</th>
-              <th className="px-6 py-3 ">debitHash</th>
-              <th className="px-6 py-3 ">From</th>
-              <th className="px-6 py-3 ">To</th>
-              <th className="px-6 py-3 ">Deposit Status</th>
-              <th className="px-6 py-3 ">Debit Status</th>
-              <th className="px-6 py-3 ">Token Name</th>
-              <th className="px-6 py-3 ">Transaction Hash</th>
-              <th className="px-6 py-3 ">Date</th>
+              {
+                data.map((item, i) => (
+                  <th key={item + i} className="px-6 py-3 ">{item.value}</th>
+                ))
+              }
             </tr>
           </thead>
           <tbody>
@@ -96,7 +104,7 @@ function UserList() {
                 </td>
                 <td className="px-6 py-4 text-center font-semibold border">{user.tokenId?.tokenName}</td>
                 <td className="px-6 py-4 text-center font-semibold border truncate max-w-[220px] w-full"><a href="#" className="text-blue-500 underline">{user.transactionHash}</a></td>
-                <td className="px-6 py-4 text-center font-medium border max-w-[190px] w-full text-nowrap">{new Date(user.createdAt).toLocaleString('en-GB', { timeZone: 'Asia/Kolkata', hour12: false })}</td>
+                <td className="px-6 py-4  border  text-nowrap">{new Date(user.createdAt).toLocaleString('en-GB', { timeZone: 'Asia/Kolkata', hour12: false })}</td>
               </tr>
             ))}
           </tbody>

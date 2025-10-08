@@ -2,6 +2,9 @@ import { IconDeviceMobileUp, IconFileDollar, IconScale, IconSwitchHorizontal, Ic
 import { Link } from "react-router-dom"
 
 export const HandelClick = ({ click, value }) => {
+ 
+
+
   return (
     <>
       <div
@@ -9,11 +12,13 @@ export const HandelClick = ({ click, value }) => {
     ${click ? "max-h-72 opacity-100 py-3" : "max-h-0 opacity-0 py-0"}`}
       >
         <div className="flex flex-col pl-10 gap-3">
-          <Link className="flex  items-center gap-2" to={"/user/userlist"}>
+          <Link  className="flex  items-center gap-2" to={"/user/userlist"}>
+
             <span><IconUser className="w-6 h-6" /></span>
             <p className={`${value ? "hidden opacity-0" : "block opacity-100"}`}> User List</p>
           </Link>
-          <Link className="flex items-center  gap-2" to={"/user/userbalance"}>
+          <Link  className="flex items-center  gap-2" to={"/user/userbalance"}>
+
             <span>
               <IconScale className="w-6 h-6" />
             </span>
@@ -26,6 +31,8 @@ export const HandelClick = ({ click, value }) => {
   )
 }
 export const IsHandelClick = ({ Isclick,value }) => {
+  
+
   return (
     <>
       <div
@@ -33,15 +40,15 @@ export const IsHandelClick = ({ Isclick,value }) => {
     ${Isclick ? "max-h-72 opacity-100 py-3" : "max-h-0 opacity-0 py-0"}`}
       >
         <div className="flex flex-col gap-4">
-          <Link className="flex items-center justify-center gap-2" to={"/Transaction/depositTransaction"}>
+          <Link  className="flex items-center justify-center gap-2" to={"/Transaction/depositTransaction"}>
             <span><IconDeviceMobileUp className='w-6 h-6' /></span>
             <p  className={`${value ? "hidden opacity-0" : "block opacity-100"}`}> Deposit Transaction</p>
           </Link>
-          <Link className="flex items-center justify-center gap-2" to={"/Transaction/marginTransaction"}>
+          <Link  className="flex items-center justify-center gap-2" to={"/Transaction/marginTransaction"}>
             <span><IconSwitchHorizontal className='w-6 h-6' /></span>
             <p  className={`${value ? "hidden opacity-0" : "block opacity-100"}`}>Margin Transaction</p>
           </Link>
-          <Link className="flex items-center justify-center gap-2" to={"/Transaction/payoutTransaction"}>
+          <Link  className="flex items-center justify-center gap-2" to={"/Transaction/payoutTransaction"}>
             <span><IconFileDollar className='w-6 h-6'/></span>
             <p  className={`${value ? "hidden opacity-0" : "block opacity-100"}`}>Payout Transaction</p>
           </Link>

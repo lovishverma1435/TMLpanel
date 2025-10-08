@@ -10,7 +10,7 @@ export default function AppLayout() {
   return (
     <div className="flex">
       {/* Sidebar */}
-      <Header value={isAdminPanel} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+      <Header value={isAdminPanel} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}  />
       {sidebarOpen && (
         <div
           onClick={() => setSidebarOpen(false)}

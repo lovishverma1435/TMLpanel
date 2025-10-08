@@ -43,6 +43,18 @@ function UserList() {
   if (loading) return <p className="text-green-400 font-semibold text-2xl text-center mt-10">Loading transactions...</p>;
   if (err) return <p className="text-red-600 font-semibold text-2xl text-center mt-10">Error: {err}</p>;
 
+
+   const data = [
+    { value: "S No" },
+    { value: "Name" },
+    { value: "UserId" },
+    { value: "Wallet Address" },
+    { value: "Status" },
+    { value: "Amount" },
+    { value: "Token Name" },
+    { value: "Date" }
+    
+  ]
   return (
     <div className="container mx-auto max-w-[1320px] py-6 px-4 sm:px-6 lg:px-8">
       {/* Header */}
@@ -60,15 +72,11 @@ function UserList() {
         <table className="min-w-full bg-white border border-gray-200">
           <thead className="bg-[#212529] text-sm font-semibold text-white text-center text-nowrap">
             <tr>
-              <th className="px-6 py-3 ">S No</th>
-              <th className="px-6 py-3 ">Name</th>
-              <th className="px-6 py-3 ">UserId</th>
-              <th className="px-6 py-3 ">Wallet Address</th>
-              <th className="px-6 py-3 ">Status</th>
-              <th className="px-6 py-3 ">Amount</th>
-              <th className="px-6 py-3 ">Token Name</th>
-              {/* <th className="px-6 py-3 ">Date</th> */}
-              {/* <th className="px-6 py-3 ">Action</th> */}
+             {
+                data.map((item, i) => (
+                  <th key={item + i} className="px-6 py-3 ">{item.value}</th>
+                ))
+              }
             </tr>
           </thead>
           <tbody>
@@ -81,7 +89,7 @@ function UserList() {
                 <td className="px-6 py-4 border border-gray-300 ">{user.status}</td>
                 <td className="px-6 py-4 border border-gray-300">{user.amount}</td>
                 <td className="px-6 py-4 border border-gray-300 truncate max-w-[220px] w-full">{user.tokenName}</td>
-                {/* <td className="px-6 py-4 text-center font-semibold border max-w-[190px] w-full">{user.createdAt}</td> */}
+                <td className="px-6 py-4  border  text-nowrap">{new Date(user.createdAt).toLocaleString('en-GB', { timeZone: 'Asia/Kolkata', hour12: false })}</td>
                 {/* <td className="px-6 py-4 border border-gray-300 text-nowrap">{user.processStatus}</td> */}
               </tr>
             ))}

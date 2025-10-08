@@ -34,7 +34,17 @@ function UserList() {
   const totalPayable = usersbalance.reduce((sum, user) => sum + (Number(user.totalPayable) || 0), 0);
   const totalCommission = usersbalance.reduce((sum, user) => sum + (Number(user.totalCommision) || 0), 0);
 
+  const data = [
+    { value: "S No" },
+    { value: "Name" },
+    { value: "UserId" },
+    { value: "Total Payable" },
+    { value: "Total Commission" }
+
+  ]
+
   return (
+    <>
     <div className="container mx-auto max-w-[1320px] py-6 px-4 sm:px-6 lg:px-8 ">
       {/* Header */}
       <div className="bg-purple-600 text-white text-center py-4 rounded-md mb-6">
@@ -44,13 +54,13 @@ function UserList() {
       {/* Table */}
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-200">
-          <thead className="bg-[#212529] text-center">
+          <thead className="bg-[#212529] text-center text-sm font-semibold text-white text-nowrap">
             <tr>
-              <th className="px-6 py-3 text-sm font-semibold text-white">S No</th>
-              <th className="px-6 py-3 text-sm font-semibold text-white">Name</th>
-              <th className="px-6 py-3 text-sm font-semibold text-white">UserId</th>
-              <th className="px-6 py-3 text-sm font-semibold text-white">Total Payable</th>
-              <th className="px-6 py-3 text-sm font-semibold text-white">Total Commission</th>
+              {
+                data.map((item, i) => (
+                  <th key={item + i} className="px-6 py-2 ">{item.value}</th>
+                ))
+              }
             </tr>
           </thead>
           <tbody>
@@ -76,6 +86,7 @@ function UserList() {
         </table>
       </div>
     </div>
+  </>
   );
 }
 

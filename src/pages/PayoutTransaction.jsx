@@ -42,6 +42,22 @@ function UserList() {
   if (loading) return <p className="text-green-400 font-semibold text-2xl text-center mt-10">Loading transactions...</p>;
   if (err) return <p className="text-red-600 font-semibold text-2xl text-center mt-10">Error: {err}</p>;
 
+
+  const data = [
+    { value: "S No" },
+    { value: "Name" },
+    { value: "UserId" },
+    { value: "apiKey" },
+    { value: "Amount" },
+    { value: "Status" },
+    { value: "Wallet Address" },
+    { value: "IP Address" },
+    { value: "BlockChain" },
+    { value: "Callback Url" },
+    { value: "Remarks" },
+    { value: "Transaction Hash" },
+    { value: "Date" },
+  ]
   return (
     <div className="container mx-auto max-w-[1320px] py-6 px-4 sm:px-6 lg:px-8">
       {/* Header */}
@@ -59,19 +75,11 @@ function UserList() {
         <table className="min-w-full bg-white border border-gray-200">
           <thead className="bg-[#212529] text-sm font-semibold text-white text-center text-nowrap">
             <tr>
-              <th className="px-6 py-3 ">S No</th>
-              <th className="px-6 py-3 ">Name</th>
-              <th className="px-6 py-3 ">UserId</th>
-              <th className="px-6 py-3 ">apiKey</th>
-              <th className="px-6 py-3 ">Amount</th>
-              <th className="px-6 py-3 ">Status</th>
-              <th className="px-6 py-3 ">Wallet Address</th>
-              <th className="px-6 py-3 ">IP Address</th>
-              <th className="px-6 py-3 ">BlockChain</th>
-              <th className="px-6 py-3 ">Callback Url</th>
-              <th className="px-6 py-3 ">Remarks</th>
-              <th className="px-6 py-3 ">Transaction Hash</th>
-              <th className="px-6 py-3 ">Date</th>
+              {
+                data.map((item, i) => (
+                  <th key={item + i} className="px-6 py-3 ">{item.value}</th>
+                ))
+              }
             </tr>
           </thead>
           <tbody>
